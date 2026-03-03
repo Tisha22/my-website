@@ -1,0 +1,338 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.cdnfonts.com/css/edo');
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container */
+.homepage-container {
+  position: relative;
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+/* Starfield Canvas */
+.starfield-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 10;
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.menu-button {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+/* Profile Container */
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.profile-image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fde68a 0%, #fbbf24 100%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.greeting-text {
+  font-size: 1.125rem;
+}
+
+/* Main Heading */
+.main-heading {
+  margin-bottom: 3rem;
+}
+
+.heading-primary {
+  font-size: 5rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.heading-secondary-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.decorative-line {
+  width: 6rem;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 48rem;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-icon {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover .btn-icon {
+  transform: translate(2px, -2px);
+}
+
+/* Scrolling Text */
+.scrolling-text-container {
+  padding: 2rem 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.scrolling-text {
+  display: flex;
+  white-space: nowrap;
+}
+
+.scrolling-content {
+  display: flex;
+  align-items: center;
+  animation: scroll 30s linear infinite;
+}
+
+.role-text {
+  font-size: 1.25rem;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', serif;
+  margin: 0 2rem;
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.25rem;
+}
+
+/* Animations */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1.5rem 2rem;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  .hero-section {
+    padding: 3rem 2rem;
+  }
+
+  .profile-image {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .greeting-text {
+    font-size: 1rem;
+  }
+
+  .heading-primary {
+    font-size: 2.5rem;
+  }
+
+  .heading-secondary {
+    font-size: 2rem;
+  }
+
+  .decorative-line {
+    width: 3rem;
+  }
+
+  .heading-secondary-wrapper {
+    gap: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .role-text {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .heading-primary {
+    font-size: 4rem;
+  }
+
+  .heading-secondary {
+    font-size: 3rem;
+  }
+
+  .decorative-line {
+    width: 4rem;
+  }
+}
+
+
+@media (min-width: 1025px) {
+  .heading-primary {
+    font-size: 6rem;
+  }
+
+  .heading-secondary {
+    font-size: 4.5rem;
+  }
+}
+
