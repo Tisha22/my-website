@@ -9,7 +9,7 @@ const ProjectResearch = () => {
       title: "DIAMOND IN THE SKY",
       desc: "Interactive visualization engine for NASA satellite data simulation. Exploring stellar variability through high-fidelity UI systems.",
       url: "https://dribbble.com/shots/21390990-Diamond-In-The-Sky",
-      img: "DiamondInProject.png",
+      img: "Game.png",
       tag: "NASA / FEATURE",
       icon: <Globe size={16} />
     },

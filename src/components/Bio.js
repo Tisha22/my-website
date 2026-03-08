@@ -8,9 +8,9 @@ const Bio = () => {
   const transition = { duration: 0.8, ease: [0.16, 1, 0.3, 1] };
 
   const experienceData = [
-    { name: "Student Associate", icon: <Briefcase size={18} />, desc: "HRDI" },
-    { name: "Business Analyst", icon: <Cpu size={18} />, desc: "Datasoft" },
-    { name: "Team Leader", icon: <Gem size={18} />, desc: "Team Diamonds" }
+    { name: "Student Associate", icon: <Briefcase size={18} />, desc: "Human Recource Developmemnt Institute - HRDI (2021 - 2023)" },
+    { name: "Business Analyst", icon: <Cpu size={18} />, desc: "Datasoft Systems Bangladesh Limited (2023 - 2024)" },
+    { name: "Project Manager", icon: <Gem size={18} />, desc: "Team Diamonds (2022 - Current)" }
   ];
 
   const skillData = [

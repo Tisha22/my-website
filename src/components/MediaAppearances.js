@@ -22,6 +22,14 @@ const MediaMarquee = () => {
     },
     { 
       id: "03", 
+      title: "Somoy TV Feature", 
+      category: "SOMOY NEWS", 
+      desc: "Detailed coverage of the technological impact and national pride following the NASA Space Apps global win.",
+      thumbnail: "https://img.youtube.com/vi/yLeM84Rj0nM/maxresdefault.jpg",
+      url: "https://youtu.be/yLeM84Rj0nM"
+    },
+    { 
+      id: "04", 
       title: "TEDx / LEAD Talk", 
       category: "TEDx STUDIO", 
       desc: "A deep dive into the 'Most Inspirational' project architecture and the journey of becoming world champions.",
@@ -29,15 +37,24 @@ const MediaMarquee = () => {
       url: "https://youtu.be/qy4YUGSKiT4"
     },
     { 
-      id: "04", 
-      title: "Winners Celebration", 
-      category: "NATIONAL TV", 
-      desc: "Highlighting the homecoming and national recognition of the 2024 NASA Space Apps Challenge World Winners.",
-      thumbnail: "https://img.youtube.com/vi/-vUFnxhFWvg/maxresdefault.jpg",
-      url: "https://youtu.be/-vUFnxhFWvg"
+      id: "05", 
+      title: "News 24 Special", 
+      category: "NEWS 24", 
+      desc: "Broadcasting the journey of the 2024 winners and the future of space exploration technology.",
+      thumbnail: "https://img.youtube.com/vi/82zAQ7YYtCE/maxresdefault.jpg",
+      url: "https://youtu.be/82zAQ7YYtCE"
+    },
+    { 
+      id: "06", 
+      title: "NASA Junior Pilot", 
+      category: "NASA EDUCATION", 
+      desc: "Engaging with the next generation of explorers through NASA's specialized pilot and outreach programs.",
+      thumbnail: "https://img.youtube.com/vi/C-opzzlWpgU/maxresdefault.jpg",
+      url: "https://youtu.be/C-opzzlWpgU"
     }
   ];
 
+  // We duplicate the array to create a seamless loop
   const duplicatedMedia = [...mediaLinks, ...mediaLinks];
 
   return (
@@ -54,14 +71,12 @@ const MediaMarquee = () => {
             <span className="h-[1px] w-16 bg-white/30" />
             <span className="text-[11px] uppercase tracking-[0.6em] text-white/40 font-bold">Press & Media</span>
           </div>
-          {/* Scaled down font size here (from text-9xl to text-8xl) */}
           <h2 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.8] text-white">
             MEDIA   
             <span className="font-thin italic opacity-20"> ARCHIVE</span>
           </h2>
         </motion.div>
 
-        {/* Right Corner Large Media Icon */}
         <motion.div 
            initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
            whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -79,7 +94,7 @@ const MediaMarquee = () => {
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             ease: "linear",
-            duration: 45, // Slower, more cinematic scroll
+            duration: 60, // Increased duration to keep pace smooth with more items
             repeat: Infinity,
           }}
         >
@@ -91,17 +106,18 @@ const MediaMarquee = () => {
               key={index}
               className="group w-[500px] flex-shrink-0 border-r border-white/10 transition-all duration-700 hover:bg-white/[0.04] relative overflow-hidden"
             >
-              {/* Media Image Container - Removed Grayscale */}
               <div className="relative aspect-video overflow-hidden m-10 mb-8 rounded-sm transition-all duration-1000 border border-white/5 shadow-lg">
                 <img 
                   src={item.thumbnail} 
                   alt={item.title}
                   className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000"
+                  onError={(e) => {
+                    // Fallback to standard quality if maxres isn't available
+                    e.target.src = item.thumbnail.replace('maxresdefault', 'hqdefault');
+                  }}
                 />
-                {/* Brightened the initial overlay so colors are visible immediately */}
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700" />
                 
-                {/* Center Play Button */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-2xl">
                         <Play fill="white" size={20} className="ml-1 text-white" />
@@ -109,7 +125,6 @@ const MediaMarquee = () => {
                 </div>
               </div>
 
-              {/* Text Content Area */}
               <div className="px-10 pb-12 relative z-10">
                 <div className="flex items-center gap-4 mb-6">
                   <span className="text-[10px] font-mono text-white/40 tracking-widest">{item.id}</span>
@@ -131,7 +146,6 @@ const MediaMarquee = () => {
                 </p>
               </div>
 
-              {/* Hover Edge Light */}
               <div className="absolute top-0 right-0 w-[1px] h-0 bg-gradient-to-b from-white/40 to-transparent group-hover:h-full transition-all duration-1000" />
             </a>
           ))}

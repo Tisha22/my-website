@@ -72,7 +72,7 @@ const SpaceHero = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-indigo-900 via-blue-950 to-black rounded-full" />
             
             <motion.img 
-              src="Tisha_Site.jpeg" 
+              src="Tisha.jpg" 
               alt="Tisha Khandokar"
               /* CHANGED: Removed 'grayscale brightness-110 contrast-110' classes. Added a very subtle dim-to-bright effect on hover instead. */
               className="relative w-full h-full object-cover rounded-full transition-all duration-700 ease-in-out opacity-90 group-hover:scale-105 group-hover:opacity-100"
