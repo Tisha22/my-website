@@ -7,10 +7,11 @@ const Bio = () => {
 
   const transition = { duration: 0.8, ease: [0.16, 1, 0.3, 1] };
 
+  // Split desc into company and duration for better control
   const experienceData = [
-    { name: "Student Associate", icon: <Briefcase size={18} />, desc: "Human Recource Developmemnt Institute - HRDI (2021 - 2023)" },
-    { name: "Business Analyst", icon: <Cpu size={18} />, desc: "Datasoft Systems Bangladesh Limited (2023 - 2024)" },
-    { name: "Project Manager", icon: <Gem size={18} />, desc: "Team Diamonds (2022 - Current)" }
+    { name: "Student Associate", icon: <Briefcase size={18} />, company: "Human Recource Developmemnt Institute - HRDI", duration: "2021 - 2023" },
+    { name: "Business Analyst", icon: <Cpu size={18} />, company: "Datasoft Systems Bangladesh Limited", duration: "2023 - 2024" },
+    { name: "Project Manager", icon: <Gem size={18} />, company: "Team Diamonds", duration: "2022 - Current" }
   ];
 
   const skillData = [
@@ -19,7 +20,8 @@ const Bio = () => {
       title: "STRATEGIC LEADERSHIP", 
       icon: <BarChart3 className="w-6 h-6" />,
       skills: "Agile Methodology • SDLC Leadership • Cross-Functional Direction",
-      details: "Lead end-to-end product ecosystems from concept to enterprise deployment, translating strategy into scalable technical frameworks, directing cross-functional teams, and driving measurable impact through data-driven execution."},
+      details: "Lead end-to-end product ecosystems from concept to enterprise deployment, translating strategy into scalable technical frameworks, directing cross-functional teams, and driving measurable impact through data-driven execution."
+    },
     { 
       id: "design", 
       title: "INNOVATION & SYSTEMS DESIGN", 
@@ -32,12 +34,12 @@ const Bio = () => {
       title: "TECHNICAL AUTHORITY", 
       icon: <Zap className="w-6 h-6" />,
       skills: "Enterprise Architecture • Product Vision • Data-Driven Analytics",
-      details: "Drive product execution using Agile and iterative delivery models. Define strategic roadmaps aligned with long-term business objectives. Lead stakeholder communication across technical and executive teams. Ensure governance, performance metrics, and continuous optimization"
+      details: "Drive product execution using Agile and iterative delivery models. Define strategic roadmaps aligned with long-term business objectives. Lead stakeholder communication across technical and executive teams. Ensure governance, performance metrics, and continuous optimization."
     },
   ];
 
   return (
-    <section className="relative py-16 md:py-24 px-6 md:px-12 lg:px-24 w-full bg-transparent text-white  overflow-hidden font-sans">
+    <section className="relative py-16 md:py-24 px-6 md:px-12 lg:px-24 w-full bg-transparent text-white overflow-hidden font-sans">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
         
         {/* LEFT SECTION: Portrait, Experience & Contacts */}
@@ -75,8 +77,10 @@ const Bio = () => {
               >
                 <div className="text-neutral-300">{work.icon}</div>
                 <div>
-                  <h5 className="text-[10px] font-black tracking-tight uppercase leading-tight mb-1">{work.name}</h5>
-                  <p className="text-[8px] text-neutral-500 uppercase font-bold tracking-widest">{work.desc}</p>
+                  <h5 className="text-[10px] font-black tracking-tight uppercase leading-tight mb-1.5">{work.name}</h5>
+                  {/* Company and Duration are now on separate lines */}
+                  <p className="text-[8px] text-neutral-400 uppercase font-bold tracking-widest mb-1">{work.company}</p>
+                  <p className="text-[8px] text-white/50 uppercase font-black tracking-widest bg-white/5 inline-block px-2 py-0.5 rounded-sm">{work.duration}</p>
                 </div>
               </motion.div>
             ))}
@@ -84,9 +88,24 @@ const Bio = () => {
 
           {/* Circular Contact Nodes */}
           <div className="flex justify-around lg:justify-between items-center px-4">
-            <ContactCircle icon={<Phone size={20} />} label="Call" value="929-756-8240" />
-            <ContactCircle icon={<Mail size={20} />} label="Email" value="tisha.k@gmail.com" />
-            <ContactCircle icon={<MapPin size={20} />} label="Loc" value="Arlington, VA" />
+            <ContactCircle 
+              icon={<Phone size={20} />} 
+              label="Mobile" 
+              value="+1 (929) 756-8240" 
+              link="tel:+19297568240"
+            />
+            <ContactCircle 
+              icon={<Mail size={20} />} 
+              label="Email" 
+              value="TISHAKHANDOKAR120@GMAIL.COM" 
+              link="mailto:TISHAKHANDOKAR120@GMAIL.COM"
+            />
+            <ContactCircle 
+              icon={<MapPin size={20} />} 
+              label="Location" 
+              value="ARLINGTON, VA, USA" 
+              link="https://maps.app.goo.gl/GMchbEDtFaswGV1b7"
+            />
           </div>
         </motion.div>
 
@@ -98,7 +117,7 @@ const Bio = () => {
           transition={transition}
           className="lg:col-span-7 w-full space-y-12"
         >
-          {/* MEDIA ARCHIVE STYLE TITLE - Refined Size */}
+          {/* MEDIA ARCHIVE STYLE TITLE */}
           <div className="relative overflow-hidden pt-4">
             <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none">
               BIO<span className="font-thin italic opacity-40">GRAPHY</span>
@@ -107,8 +126,8 @@ const Bio = () => {
             {/* Archive Divider */}
             <div className="h-[1px] w-full bg-white/20 mt-8 mb-10" />
             
-            <p className="text-xl md:text-2xl lg:text-2xl text-neutral-200  opacity-40 font-light leading-snug max-w-3xl border-l-4 border-white pl-8 md:pl-10 hover:text-white">
-              Software Engineer & Product Strategist driving <span className="text-white font-black italic ">High-Impact</span> and <span className="text-white font-black italic">Data-Driven</span> digital platforms, transforming complex challenges into scalable solutions that deliver measurable growth and lasting strategic impact.
+            <p className="text-xl md:text-2xl lg:text-2xl text-neutral-200 opacity-40 font-light leading-snug max-w-3xl border-l-4 border-white pl-8 md:pl-10 hover:text-white transition-colors duration-500">
+              Software Engineer & Product Strategist driving <span className="text-white font-black italic">High-Impact</span> and <span className="text-white font-black italic">Data-Driven</span> digital platforms, transforming complex challenges into scalable solutions that deliver measurable growth and lasting strategic impact.
             </p>
           </div>
 
@@ -117,10 +136,11 @@ const Bio = () => {
             <h3 className="text-[10px] uppercase tracking-[0.6em] text-neutral-600 font-black mb-6">Expertise Architecture</h3>
             
             {skillData.map((item) => (
-              <button 
+              <div 
                 key={item.id}
-                onClick={() => setActiveSkill(activeSkill === item.id ? null : item.id)}
-                className={`w-full text-left p-6 md:p-8 rounded-2xl border transition-all duration-500 flex flex-col gap-4 ${
+                onMouseEnter={() => setActiveSkill(item.id)}
+                onMouseLeave={() => setActiveSkill(null)}
+                className={`w-full text-left p-6 md:p-8 rounded-2xl border transition-all duration-500 flex flex-col gap-4 cursor-default ${
                   activeSkill === item.id 
                     ? 'bg-white/[0.08] border-white/40 backdrop-blur-xl' 
                     : 'bg-white/[0.02] border-white/5 hover:border-white/20'
@@ -159,7 +179,7 @@ const Bio = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </button>
+              </div>
             ))}
           </div>
         </motion.div>
@@ -168,14 +188,18 @@ const Bio = () => {
   );
 };
 
-const ContactCircle = ({ icon, label, value }) => (
+// Updated ContactCircle to accept a 'link' prop and render as an <a> tag
+const ContactCircle = ({ icon, label, value, link }) => (
   <div className="flex flex-col items-center gap-3 group relative">
-    <motion.div 
+    <motion.a 
+      href={link}
+      target={link ? "_blank" : undefined}
+      rel={link ? "noopener noreferrer" : undefined}
       whileHover={{ scale: 1.1, backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.4)' }}
       className="w-14 h-14 md:w-16 md:h-16 rounded-full border border-white/10 flex items-center justify-center bg-white/[0.02] backdrop-blur-md transition-all cursor-pointer text-white shadow-lg"
     >
       {icon}
-    </motion.div>
+    </motion.a>
     
     <div className="absolute -bottom-16 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center pointer-events-none z-50">
       <span className="text-[9px] font-black uppercase tracking-widest text-neutral-500 mb-1">{label}</span>

@@ -8,11 +8,10 @@ const Footer = () => {
 
   // Add your actual profile links here
   const socials = [
-    { name: 'Email', icon: <Mail size={24} strokeWidth={1} />, url: 'mailto:tishakhandoka11@gmail.com' },
-    { name: 'LinkedIn', icon: <Linkedin size={24} strokeWidth={1} />, url: '#' },
-    { name: 'GitHub', icon: <Github size={24} strokeWidth={1} />, url: '#' },
-    { name: 'Twitter', icon: <Twitter size={24} strokeWidth={1} />, url: '#' },
-    { name: 'Facebook', icon: <Facebook size={24} strokeWidth={1} />, url: '#' },
+    { name: 'Email', icon: <Mail size={24} strokeWidth={1} />, url: "mailto:tishakhandokar120@gmail.com" },
+    { name: 'LinkedIn', icon: <Linkedin size={24} strokeWidth={1} />, url: 'https://www.linkedin.com/in/tisha-khandokar/' },
+    { name: 'GitHub', icon: <Github size={24} strokeWidth={1} />, url: 'https://github.com/Tisha22' },
+    { name: 'Facebook', icon: <Facebook size={24} strokeWidth={1} />, url: 'https://www.facebook.com/tisha.khandokar.92' },
     { name: 'Website', icon: <Globe size={24} strokeWidth={1} />, url: '#' },
   ];
 
@@ -129,7 +128,7 @@ const Footer = () => {
         >
           <MapPin size={16} strokeWidth={1.5} className="text-neutral-400" />
           <span className="text-xs font-mono uppercase tracking-[0.2em] text-neutral-400">
-            2000 S Eads St, Arlington, VA
+            Arlington, VA, USA
           </span>
         </motion.div>
 
@@ -162,8 +161,8 @@ const Footer = () => {
         <div className="w-full mt-10 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 opacity-40">
           <span className="text-[9px] font-mono uppercase tracking-[0.4em]">© 2026 TISHA KHANDOKAR</span>
           <div className="flex gap-6">
-            <span className="text-[9px] font-mono uppercase tracking-[0.4em] hover:text-white transition-colors cursor-pointer">Privacy</span>
-            <span className="text-[9px] font-mono uppercase tracking-[0.4em] hover:text-white transition-colors cursor-pointer">Terms</span>
+            <span className="text-[9px] font-mono uppercase tracking-[0.4em] hover:text-white transition-colors cursor-pointer">LOVE</span>
+            <span className="text-[9px] font-mono uppercase tracking-[0.4em] hover:text-white transition-colors cursor-pointer">POSITIVITY</span>
           </div>
         </div>
 

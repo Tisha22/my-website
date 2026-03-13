@@ -41,7 +41,7 @@ const MediaMarquee = () => {
       title: "News 24 Special", 
       category: "NEWS 24", 
       desc: "Broadcasting the journey of the 2024 winners and the future of space exploration technology.",
-      thumbnail: "https://img.youtube.com/vi/82zAQ7YYtCE/maxresdefault.jpg",
+      thumbnail: "NEWS24.png",
       url: "https://youtu.be/82zAQ7YYtCE"
     },
     { 
@@ -54,7 +54,6 @@ const MediaMarquee = () => {
     }
   ];
 
-  // We duplicate the array to create a seamless loop
   const duplicatedMedia = [...mediaLinks, ...mediaLinks];
 
   return (
@@ -77,14 +76,15 @@ const MediaMarquee = () => {
           </h2>
         </motion.div>
 
-        <motion.div 
-           initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-           whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-           transition={{ duration: 1.2 }}
-           className="hidden md:block relative z-0"
-        >
-          <Video className="text-white/[0.07] mb-4 ml-auto" size={160} strokeWidth={0.5} />
-        </motion.div>
+        {/* Content Aligned with Video Icon */}
+        <div className="relative z-10">
+          <div className="text-left md:text-right">
+            <Video className="text-white/10 mb-4 md:ml-auto" size={48} strokeWidth={1} />
+            <p className="text-white/40 text-[10px] uppercase tracking-widest leading-relaxed max-w-[240px]">
+              ARCHIVING THE GLOBAL MEDIA PRESENCE AND INTERNATIONAL RECOGNITION OF TISHA KHANDOKAR.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Infinite Marquee Section */}
@@ -94,7 +94,7 @@ const MediaMarquee = () => {
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             ease: "linear",
-            duration: 60, // Increased duration to keep pace smooth with more items
+            duration: 60,
             repeat: Infinity,
           }}
         >
@@ -112,7 +112,6 @@ const MediaMarquee = () => {
                   alt={item.title}
                   className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000"
                   onError={(e) => {
-                    // Fallback to standard quality if maxres isn't available
                     e.target.src = item.thumbnail.replace('maxresdefault', 'hqdefault');
                   }}
                 />

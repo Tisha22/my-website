@@ -121,7 +121,7 @@ const NewsGallery = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <Radio className="text-red-600 animate-pulse" size={18} />
+            <span className="h-[1px] w-16 bg-white/30" />
               <span className="text-[10px] uppercase tracking-[0.5em] text-white/50 font-bold">Press Coverage</span>
             </div>
             <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none">
@@ -259,13 +259,13 @@ const NewsGallery = () => {
             <div className="mt-8 p-8 border border-white/5 rounded-sm bg-transparent">
               <div className="flex items-center gap-4 mb-4 opacity-30">
                 <div className="h-[1px] flex-1 bg-white/20" />
-                <span className="text-[9px] uppercase tracking-widest font-bold">Network</span>
+                <span className="text-[9px] uppercase tracking-widest font-bold">MAJOR AREA</span>
               </div>
               <div className="grid grid-cols-2 gap-4 text-[10px] text-white/40 uppercase tracking-widest">
                 <span className="hover:text-white cursor-default transition-colors">NASA</span>
                 <span className="hover:text-white cursor-default transition-colors">SPACE</span>
-                <span className="hover:text-white cursor-default transition-colors">EDUCATION</span>
                 <span className="hover:text-white cursor-default transition-colors">STEM</span>
+                <span className="hover:text-white cursor-default transition-colors">EDUCATION</span>
               </div>
             </div>
           </div>
